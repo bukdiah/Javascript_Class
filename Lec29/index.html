@@ -1,0 +1,18 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <!-- 
+        These 3 script tags are not creating new Execution Contexts
+        No separation of code, they literally just stack the code on top of each other
+        and run the code as if it were one file
+    -->
+    <script src="lib1.js"></script>
+    <script src="lib2.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

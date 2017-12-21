@@ -72,3 +72,139 @@ Asynchronous: More than one at a time
 Event Queue won't be processed until the execution stack is empty
 
 ![](2017-12-17-19-04-09.png)
+
+Javascript has Dynamic Typing: YOu don't tell the engine what type of data
+a variable holds. It figures it out while your code is running. Values can hold different types of values because it's all figured out during execution.
+
+var isNew = true; //not errors
+isNew = "yup";
+isNew = 1;
+
+Primitive Types:
+
+Number (Floats)
+Booleans (True or False)
+String ('' or "" can be used)
+undefined : represents a lack of existence
+null: represents lack of existence(you can set a variable equal to nothing using null)
+
+Operator: A special function that is syntactically (written) differently. Generally, operators take two paramters and one result
+
+EX:
+
+var a = 3 + 4;
+console.log(a)
+
+//+ sign is an operator and is actually a funciton
+/*
+function +(a,b) {
+    return // add the two numbers
+}
+
+infix notation allows us to call the function like this
+    3 + 4
+
+Operator Precedence: Which operator function gets called first. Functions are called in order of precedence (Higher precedence wins)
+
+Operator Associativity: What order operator functions get called in: Left-to-right or right-to-left. When functions have the SAME precedence.
+
+Coercion: Converting a value from one type to another. This happens often because JS is dynamically typed
+
+var a = 1 + '2';
+console.log(a)   //12
+
+number 1 is coerced into a string '1' so this happens var a = '1' + '2'
+
+Comparison operators
+
+console.log(3<2<1); //evalutes to true
+
+< operator is left to right associative
+
+3<2 evalues to false
+
+false < 1  /// false is coerced into 0. Can see this doing Number(false)
+
+0<1   is true
+
+Not all coercisions are gonna be correct though
+Number(undefined) yiled NaN, Number(undefined) yields 0
+
+Avoid that coercion stuff by using STRICT equality
+
+3 === 3 true
+"3" === "3" true
+"3" === 3 false      different type, so not equal
+
+Objects and the dot
+
+Objects and their properties and methods are created in memory using any of the various syntax
+
+var person = new Object(); //Do not do it this way
+
+Object literal ---> var person = {};  shorthand for above
+
+Can set up properties and methods using object literals
+
+var person = {
+    firstname: "tony",
+    lastname: "Pony"
+}
+
+
+Namespace: A container for variables and functions. Typically to keep variables and functions with the same name separate
+
+JS doesn't have namespaces
+
+You can mimic it though
+var greet = "Hello!";
+var greet = "Hola!";
+
+console.log(greet); yiels Hola!
+
+var english = {
+    greetings: {
+        basic: "Hello!"
+    }
+};
+
+var spanish = {}
+
+spanish.greet = 'Hola!';
+
+console.log(english)
+
+Functions are Objects
+
+First Class Function: Everything you can do with other types, you can do with functions. Assign them to variables, pass them around, create them on the fly.
+
+![](Function_Diagram.png)
+
+Code that you write for a function is stored in a special property called Code of the Function object. The Code property is Invocable ()
+
+![](Function_Diagram2.png)
+
+Function Statements and Function Expressions
+
+Expression: A unit of code that results in a value. It doesn't have to save to a variable
+
+Statements just does work
+
+Function Expression (An annonymous function)
+
+![](Function_Expression.png)
+
+Conceptual Aside: By value vs By Reference
+
+![](By_Value.png)
+
+These two values become the same by copying the value into 2 separate spots in memory
+
+![](By_Reference.png)
+
+All objects (functions are objects too) are by reference
+
+Mutate: To Change something. "Immutable" means cannot be changed
+
+Objects, Functions, and this
+
