@@ -27,10 +27,27 @@ var c = {
     name: 'The c object',
     log: function() {
         /*
+         Now you have a new variable, that is set equal to by reference as the this keyword
+         Right now, this keyword points to the whole object (c)
+         Now use self, everywhere you would use this
+        */
+        var self = this;
+        /*
         You can mutate the object that contains me, if I'm a method of that object by using the this keyword
         */
-        this.name = 'Updated c object';
-        console.log(this); //points to the OBJECT that contains keyword this
+        //this.name = 'Updated c object';
+        //console.log(this); //points to the OBJECT that contains keyword this
+        self.name = 'updated c object';
+        console.log(self);
+
+        var setname = function(newname) {
+            //this.name = newname; // this keyword points to the GLOBAL object, to avoid, try using the self pattern
+            self.name = newname;
+        }
+
+        setname('Update again!');
+        //console.log(this);
+        console.log(self);
     }
 }
 
