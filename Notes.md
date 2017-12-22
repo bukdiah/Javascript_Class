@@ -208,3 +208,16 @@ Mutate: To Change something. "Immutable" means cannot be changed
 
 Objects, Functions, and this
 
+
+Conceptual Aside: Arrays
+
+Can put whatever you want in an array. Each element can be a different type because JS is dynamically typed.
+
+'arguments' and SPREAD
+
+Arguments hold all the values(parameters) you passed to the function. JS gives you a keyword of the same name which contains them all.
+
+![](Execution_Context_Function.png)
+
+
+Framework Aside: Function Overloading
