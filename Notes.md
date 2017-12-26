@@ -316,4 +316,34 @@ Call(), Apply(), and Bind()
 
 Function Currying: Creating a copy of a function but with some preset parameters. Very useful for math functions
 
-Functional Programming (LISP, ML)
+Functional Programming (LISP, ML) Lecture 51
+
+Object Oriented JS and Prototypical Inheritance
+
+Inheritance: One object gets access to the properties and methods of another object (JS)
+
+Classical: C#, Java. Most popular way inheritance has been done. Verbose.
+
+Prototypical inheritance: Simple -> flexibible, extrensible, easy to understand?
+
+Understanding the Prototype
+
+ALl objects have a prototype property. It is simply a reference to another object (called proto in our example)
+
+![](2017-12-26-17-26-40.png)
+
+Prototype Chain - Looking for where we have access to a prop or method amongst a sequence of objects that are connected via this prototype property that we are called proto. It's hidden in that you don't have to go obj.proto.proto.prop3 to get prop3
+
+If you have another object, obj2, it can point to the same object as it's prototype
+
+![](2017-12-26-17-29-30.png)
+
+obj2 shares a property with obj but not directly instead via the prototype chain
+
+Everything is an object (or a primitive) Lec55
+
+The built in core object is at the bottom of the prototype chain
+
+Reflection and Extend Lec56
+
+Reflection: An object can look at itself, listing and changing and its properties and methods. You can use to implement a pattern called EXTEND (composition)
