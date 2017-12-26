@@ -219,5 +219,101 @@ Arguments hold all the values(parameters) you passed to the function. JS gives y
 
 ![](Execution_Context_Function.png)
 
+Whitespace: Invisible characters that create a literal 'space' in your written code. Carriage returns, tabs, spaces.
 
-Framework Aside: Function Overloading
+Immediately Invoked Function Expressions (IIFE)s Lecture 44
+
+IIFEs and Safe Code Lecture 45
+
+![](2017-12-23-19-42-56.png)
+
+![](2017-12-23-19-49-38.png)
+
+Understanding Closures Lecture 46
+
+![](2017-12-23-20-06-52.png)
+
+When the code starts, we have our Global Execution Context
+
+When we hit var sayHi = greet('Hi');
+It invokes the greet function and creates a new execution context
+
+![](2017-12-23-20-09-14.png)
+
+The variable that is passed to it, is sitting in its variable environment. Creates a function on the fly and returns it. After the return, the greet execution context is popped off the stack
+
+![](2017-12-23-20-10-37.png)
+
+At the moment the context finishes, the memory space is still there (whattosay)
+
+Now we are in Global Execution Context again and invoke the function sayHi is pointing at. It's annonymous. THen that creates a new execution context.
+
+![](2017-12-23-20-13-00.png)
+
+When you hit the console.log line and its code is invoked, and JS engine sees the whattosay variable, it goes up the scope chain to look for that variable since it could not find it inside the function itself via outer lexical reference
+
+![](2017-12-23-20-16-37.png)
+
+Even though the greet function ended, any functions created inside of it when they are called, will still have a reference to that greet function's memory. TO what was in its memory, its execution context memory space.
+
+Greet is gone, the execution context is gone, but what's in memory for that execution context isn't and the JS engine makes sure that my function can still go down the scope chain and find it, even if it is not on the execution stack anymore
+
+![](2017-12-24-16-54-35.png)
+
+when you hit this return arr; what's in memory is that i = 3 and arr holds 3 functions [f0,f1,f2]
+
+Then we go back to the Global execution context and buildFunctions() execution context is popped off the stack. What's in memory is still hanging around.
+
+![](2017-12-24-16-55-58.png)
+
+When we hit fs[0](); and execute it. The code property says to console.log(i). Using the outer reference, it goes up the scope chain. i was created in buildfunctions and it's value is 3.
+
+![](2017-12-24-16-58-07.png)
+
+The same thing happens to the rest of the functions. They go to the same spot in the scope chain because they were created in buildFunctions()
+
+Framwork Asides: Function Factories Lecture 48
+
+![](2017-12-24-17-29-53.png)
+
+When we reach var greetEnglish = makeGReeting('en'), it creates a new execution context
+
+![](2017-12-24-17-31-01.png)
+
+Then it returns a function that is now stored in greetEnglish, it's pointing to that function, and makeGreeting('en) is popped
+
+![](2017-12-24-17-32-42.png)
+
+When we reach var greetSpanish = makeGreeting('es') ... we get a new execution context and that returns a new function object stored in greetSpanish and is then popped
+
+![](2017-12-24-17-34-25.png)
+
+![](2017-12-24-17-35-04.png)
+
+Now we have 2 spots in memory that are hanging out that those 2 separate contexts once contained
+
+![](2017-12-24-17-35-54.png)
+
+When we hit greetEnglish, it creates a new execution context with firstname = John, lastname = Doe
+
+The outer environment reference needs to point to to one of the exectiion contexts created by makeGReeting cause that's where it sits lexically.
+
+JS engine knows that the first context was created during the first execution context. So it points to the one it was created inside of
+
+![](2017-12-24-17-38-43.png)
+
+WHen you hit greetSpanish, it generates it's own context, but that function object was created to the second call to makeGreeting. So it's outer reference points to the second execution context that was created for that second call.
+
+![](2017-12-24-17-40-41.png)
+
+CLosures and Callbacks
+
+Callback Function: A function you give to another function, to be run when the other function is finished. So the function you call (invoke), 'calls back' by calling the function you gave it when it finishes
+
+Call(), Apply(), and Bind()
+
+![](2017-12-24-17-55-49.png)
+
+Function Currying: Creating a copy of a function but with some preset parameters. Very useful for math functions
+
+Functional Programming (LISP, ML)
