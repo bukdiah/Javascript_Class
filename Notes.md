@@ -347,3 +347,53 @@ The built in core object is at the bottom of the prototype chain
 Reflection and Extend Lec56
 
 Reflection: An object can look at itself, listing and changing and its properties and methods. You can use to implement a pattern called EXTEND (composition)
+
+Lec 57
+
+Function COnstructors: A normal function that is used to construct objects. The 'this' variable points to a new empty object and that object is returned from the function automatically
+
+Lec58 Function Constructors and .prototype
+
+When you use a function constructor, it already set the prototype for you
+
+Anytime you create a function object, you get special properties: prototype being one of them. It lives only for when you're using a function as a function constructor.
+
+![](2017-12-29-13-51-24.png)
+
+The prototype property on a function, is NOT the prototype of the function. It's the prototype of any objects created if you're using the function as a function constructor.
+
+Dangerous Aside: New and Functions Lec 59
+
+Any function we intend to be a function constructor, we use a capital letter for it's name
+
+Lec60
+
+var a = new Number(3)
+
+yields an object that wraps and boxes up a number, not a primitive. It also has built in methods because protoype points to Number.prototype
+
+In general, you should not use built in function constructors for primitive types unless you HAVE TO
+
+Lec 62: Dangerous Aside: Arrays and for...in
+
+Do not use for...in for an array
+
+because arrays and objects and you can iterate all the way down to the prototype
+
+Lec 63: Object.create and Pure Prototypal Inheritance
+
+Polyfill: Code that adds a feature which the engine may lack. Checks to see if an engine has some feature. If not, we write some code to add those features it is missing.
+
+ES6 and Classes
+
+![](2017-12-29-16-25-18.png)
+
+This class person is actually an object that is created. Then you are creating new objects from that object.
+
+How to set prototype then? Using extends. That sets the prototype for any of your objects created with this class. Sets __proto__ property at least in Chrome. Super calls the constructor of the object that is your prototype.
+
+![](2017-12-29-16-29-10.png)
+
+Syntactic Sugar: A different way to TYPE something that doesn't change how it works under the hood
+
+It's still prototypal inheritance
