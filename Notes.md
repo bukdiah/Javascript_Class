@@ -384,7 +384,7 @@ Lec 63: Object.create and Pure Prototypal Inheritance
 
 Polyfill: Code that adds a feature which the engine may lack. Checks to see if an engine has some feature. If not, we write some code to add those features it is missing.
 
-ES6 and Classes
+ES6 and Classes Lec 64
 
 ![](2017-12-29-16-25-18.png)
 
@@ -397,3 +397,18 @@ How to set prototype then? Using extends. That sets the prototype for any of you
 Syntactic Sugar: A different way to TYPE something that doesn't change how it works under the hood
 
 It's still prototypal inheritance
+
+Lecture 70 Deep Dive Into jQuery
+
+jQyert lets you manipulate the DOM (Document Object Model) inside the browser. The thing inside the brower that allows it to render the screen.
+
+Lecture 72
+
+Method Chaining: Calling one method after another and each method affects the parent object
+so obj.method1().method2()   where both methods end up with a 'this' variable pointing at 'obj'
+
+Lecture 81: Typescript, ES6, and Transpiled Languages
+
+Transpile: Convert the syntax of one programming language to another
+
+In this case, languages that don't really ever run anywhere, but instead are processed by 'transpilers' that generate JS
