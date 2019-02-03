@@ -31,10 +31,11 @@ var g = G$(firstname, lastname, language)
         self.language = language || "en";
         
         /*
-        Object created here needs to point to Greetr.prototype as it's prototype
+        Object created here needs to point to Greetr.prototype (proto) as it's prototype
         */
     }
-    //where objs that are being created, are pointed at (Greetr.init.prototype)
+    //where objs that are being created, they are pointed to (Greetr.init.prototype)
+    // Make objects created by the function constructor...point their prototypes to Greetr.prototype
     Greetr.init.prototype = Greetr.prototype;
 
     /*
