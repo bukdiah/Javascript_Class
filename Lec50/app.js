@@ -74,6 +74,8 @@ function multiply(a,b) {
     return a*b;
 }
 
+// The first parameter (a) will always be a 2 in the multiply function
+// We create a copy of multiply() but with some PRESET params
 var multipleByTwo = multiply.bind(this,2);
 
 console.log(multipleByTwo(4));
