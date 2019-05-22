@@ -17,6 +17,7 @@ john.__proto__ = person; //John's prototype points to person. now inherits from 
 for (var prop in john) {
     //Method on the base object.
     //Tells you if this object really has this property
+    // Ignores stuff on the PROTOTYPE
     //If it does...returns true
     if (john.hasOwnProperty(prop)){
         console.log(prop + ': ' + john[prop]);        
