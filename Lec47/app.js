@@ -65,7 +65,7 @@ var fs2 = buildFunctions2();
 
 //Functions are invoked here
 
-fs2[0](); //yields 3
-fs2[1](); //yields 3
-fs2[2](); //yields 3
+fs2[0](); //yields 0
+fs2[1](); //yields 1
+fs2[2](); //yields 2
 
