@@ -37,8 +37,8 @@ function buildFunctions2() {
     var arr = [];
 
     /*
-    let j = i; //New ES6 lets us do that
     for(var i = 0; i< 3; i++) {
+        let j = i; //New ES6 lets us do that
         arr.push(
             function(){
                 //console.log(i); //this is not being executed here
